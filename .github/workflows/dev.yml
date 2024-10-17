@@ -12,9 +12,11 @@ on:
       auto:
         type: boolean
         required: true
+        default: false
       pod:
         type: boolean
         required: false
+        default: false
 
 jobs:
   build:
