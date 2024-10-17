@@ -1,0 +1,35 @@
+name: PROD
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        required: true
+        options:
+          - dev
+          - stable
+      auto:
+        type: boolean
+        required: true
+      pod:
+        type: boolean
+        required: false
+
+jobs:
+  prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: deploy
+        run: echo 'deploy...'
+  build:
+    needs: prod
+    uses: ./.github/workflows/action.yml
+    with:
+      env: ${{ github.event.inputs.env }}
+      auto: ${{ github.event.inputs.auto }}
+      pod: ${{ github.event.inputs.pod }}
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
+
