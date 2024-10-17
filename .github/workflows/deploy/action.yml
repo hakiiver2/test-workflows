@@ -17,9 +17,9 @@ on:
         required: false
 
 env:
-  ENV: ${{ github.event.inputs.env }}
-  AUTO: ${{ github.event.inputs.auto }}
-  POD: ${{ github.event.inputs.pod }}
+  ENV: ${{ inputs.env }}
+  AUTO: ${{ inputs.auto }}
+  POD: ${{ inputs.pod }}
 
 jobs:
   build:
