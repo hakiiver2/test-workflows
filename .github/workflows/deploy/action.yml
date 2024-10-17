@@ -25,3 +25,4 @@ runs:
       echo "ENV: $env.env"
       echo "AUTO: $env.auto"
       echo "POD: $env.pod"
+      shell: bash 
