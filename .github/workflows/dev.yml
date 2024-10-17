@@ -15,9 +15,6 @@ on:
         type: boolean
         required: false
 
-env:
-  TOKEN: ${{ secrets.TOKEN}}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -30,5 +27,4 @@ jobs:
           env: ${{ github.event.inputs.env }}
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
-        secrets:
-          TOKEN: ${{TOKEN}}
+        secrets: inherit
