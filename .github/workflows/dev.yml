@@ -30,9 +30,9 @@ jobs:
     name: DEPLOY
     needs: build
     if: ${{ needs.build.outputs.env == 'dev' || needs.build.outputs.env == 'stable'  }}
-    secrets: inherit
     uses: ./.github/workflows/deploy
     with:
       env: ${{ github.event.inputs.env }}
       auto: ${{ github.event.inputs.auto }}
       pod: ${{ github.event.inputs.pod }}
+    secrets: inherit
