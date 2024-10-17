@@ -23,8 +23,8 @@ jobs:
         uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/deploy
+        secrets: inherit
         with:
           env: ${{ github.event.inputs.env }}
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
-        secrets: inherit
