@@ -15,6 +15,9 @@ on:
         type: boolean
         required: false
 
+env:
+  TOKEN: ${{ secrets.TOKEN}}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -28,4 +31,4 @@ jobs:
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
         secrets:
-          TOKEN: ${{ secrets.TOKEN}}
+          TOKEN: ${{TOKEN}}
