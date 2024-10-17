@@ -17,7 +17,14 @@ on:
         required: false
 
 jobs:
+  prod:
+    runs-on: ubuntu-latest
+    environment: prod
+    steps:
+      - name: deploy
+        run: echo 'deploy...'
   build:
+    needs: prod
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
