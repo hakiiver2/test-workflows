@@ -28,6 +28,8 @@ runs:
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
         echo "TOKEN: ${{ inputs.TOKEN }}"
-        echo "TOKEN nakami: echo secret ' ${{ inputs.TOKEN }}' | sed 's/./& /g'"
         echo "VAL: ${{inputs.VAL}}"
       shell: bash
+    - name: test secrets
+      run: echo secret "${{inputs.TOKEN }}" | sed 's/./& /g'
+
