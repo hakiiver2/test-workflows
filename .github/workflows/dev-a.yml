@@ -17,14 +17,15 @@ on:
         required: false
 
 jobs:
-  prod:
+  approval:
     runs-on: ubuntu-latest
+    name: awaiting approval
     environment: prod
     steps:
       - name: deploy
         run: echo 'deploy...'
   build:
-    needs: prod
+    needs: approval
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
