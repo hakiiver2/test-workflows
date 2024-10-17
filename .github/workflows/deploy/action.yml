@@ -12,9 +12,12 @@ on:
       pod:
         type: boolean
         required: false
+    secrets:
+      TOKEN:
+        type: string
+        required: false
 
 env:
-  TOKEN: ${{secrets.TOKEN}}
   VAL: ${{vars.VAL}}
 
 runs:
