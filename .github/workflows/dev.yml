@@ -17,8 +17,8 @@ on:
         required: false
 
 jobs:
-  integration:
-    name: BUILD
+  build:
+    name: Build
     runs-on: ubuntu-latest
     outputs:
       env: ${{ github.event.inputs.env }}
@@ -28,8 +28,8 @@ jobs:
 
   deploy-dev:
     name: DEPLOY
-    needs: integration
-    if: ${{ needs.integration.outputs.env == 'dev' || needs.integration.outputs.env == 'stable'  }}
+    needs: build
+    if: ${{ needs.build.outputs.env == 'dev' || needs.build.outputs.env == 'stable'  }}
     secrets: inherit
     uses: ./.github/workflows/deploy
     with:
