@@ -12,6 +12,9 @@ on:
       pod:
         type: boolean
         required: false
+      TOKEN:
+        type: string
+        required: true
 
 
 runs:

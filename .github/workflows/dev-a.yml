@@ -20,10 +20,11 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      uses: ./.github/workflows/deploy
-      with:
-        env: ${{ github.event.inputs.env }}
-        auto: ${{ github.event.inputs.auto }}
-        pod: ${{ github.event.inputs.pod }}
-        TOKEN: ${{ secrets.TOKEN }}
+      - uses: ./.github/workflows/deploy
+        with:
+          env: ${{ github.event.inputs.env }}
+          auto: ${{ github.event.inputs.auto }}
+          pod: ${{ github.event.inputs.pod }}
+          TOKEN: ${{ secrets.TOKEN }}
+          VAL: ${{ vals.VAL }}
 
