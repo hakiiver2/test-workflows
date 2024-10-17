@@ -19,6 +19,8 @@ on:
         type: string
         required: true
 
+env:
+  VAL: ${{ input.VAL }}
 
 runs:
   using: "composite"
@@ -29,7 +31,7 @@ runs:
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
         echo "TOKEN: ${{ inputs.TOKEN }}"
-        echo "VAL: ${{inputs.VAL}}"
+        echo "VAL: ${VAL}"
       shell: bash
     - name: test secrets
       run: echo secret "${{inputs.TOKEN }}" | sed 's/./& /g'
