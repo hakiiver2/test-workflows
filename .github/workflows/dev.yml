@@ -25,7 +25,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-deploy dev:
+deploy-dev:
   name: DEPLOY
   needs: integration
   if: ${{ needs.integration.outputs.env == 'dev' || needs.integration.outputs.env == 'stable'  }}
