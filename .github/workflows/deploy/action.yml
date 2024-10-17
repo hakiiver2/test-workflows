@@ -14,8 +14,8 @@ on:
         required: false
 
 env:
-  TOKEN: ${{ secrets.TOKEN }}
-  VAL: ${{ vars.VAL }}
+  TOKEN: ${{secrets.TOKEN}}
+  VAL: ${{vars.VAL}}
 
 runs:
   using: "composite"
