@@ -12,13 +12,7 @@ on:
       pod:
         type: boolean
         required: false
-    secrets:
-      TOKEN:
-        type: string
-        required: false
 
-env:
-  VAL: ${{vars.VAL}}
 
 runs:
   using: "composite"
@@ -28,6 +22,6 @@ runs:
         echo "AUTO: ${{ inputs.auto }}"
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
-        echo "TOKEN: ${TOKEN}"
-        echo "VAL: ${VAL}"
+        echo "TOKEN: ${{secrets.TOKEN}}"
+        echo "VAL: ${{vars.VAL}}"
       shell: bash

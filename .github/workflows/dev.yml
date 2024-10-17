@@ -15,10 +15,6 @@ on:
         type: boolean
         required: false
 
-env:
-  TOKEN: ${{secrets.TOKEN}}
-  VAL: ${{vars.VAL}}
-
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -31,5 +27,3 @@ jobs:
           env: ${{ github.event.inputs.env }}
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
-        secrets:
-          TOKEN: ${ secrets.ARTIFACTORY_USER_TOKEN
