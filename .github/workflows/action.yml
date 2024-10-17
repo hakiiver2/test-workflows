@@ -1,4 +1,4 @@
-name: base
+name: _base
 
 on:
   workflow_call:
