@@ -14,9 +14,8 @@ on:
         required: false
 
 runs:
+  using: "composite"
   steps:
-    - name: Checkout
-      uses: actions/checkout@v4
     - run: |
       echo "ENV: {{$inputs.env}}"
       echo "AUTO: {{$inputs.auto}}"
