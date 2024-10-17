@@ -22,7 +22,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
     - run: |
-      echo "ENV: $env.env"
-      echo "AUTO: $env.auto"
-      echo "POD: $env.pod"
+      echo "ENV: $inputs.env"
+      echo "AUTO: $inputs.auto"
+      echo "POD: $inputs.pod"
       shell: bash 
