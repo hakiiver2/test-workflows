@@ -1,0 +1,31 @@
+name: base
+
+on:
+  workflow_call:
+    inputs:
+      env:
+        type: choice
+        required: true
+        options:
+          - dev
+          - prod
+      auto:
+        type: boolean
+        required: true
+      pod:
+        type: boolean
+        required: false
+
+env:
+  ENV: ${{ github.event.inputs.env }}
+  AUTO: ${{ github.event.inputs.auto }}
+  POD: ${{ github.event.inputs.pod }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+        echo "ENV: $ENV"
+        echo "AUTO: $AUTO"
+        echo "POD: $POD"
