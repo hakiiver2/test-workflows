@@ -27,3 +27,5 @@ jobs:
           env: ${{ github.event.inputs.env }}
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
+        secrets:
+          TOKEN: ${{ secrets.TOKEN}}

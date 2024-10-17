@@ -12,6 +12,10 @@ on:
       pod:
         type: boolean
         required: false
+    secrets:
+      TOKEN:
+        type: string
+        required: true
 
 
 runs:
