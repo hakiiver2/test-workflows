@@ -21,3 +21,4 @@ runs:
       echo "AUTO: ${{ inputs.auto }}"
       echo "POD: ${{ inputs.pod }}"
       echo "ENV: ${{ inputs.env }}"
+      shell: bash
