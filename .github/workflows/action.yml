@@ -1,0 +1,32 @@
+name: base
+
+on:
+  workflow_call:
+    inputs:
+      env:
+        type: string
+        required: true
+      auto:
+        type: boolean
+        required: true
+      pod:
+        type: boolean
+        required: false
+    secrets:
+      TOKEN:
+        required: true
+
+
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: echo
+      run: |
+        echo "AUTO: ${{ inputs.auto }}"
+        echo "POD: ${{ inputs.pod }}"
+        echo "ENV: ${{ inputs.env }}"
+        echo "TOKEN: ${{ secrets.TOKEN }}"
+        echo "VAL: ${{vars.VAL}}"
+      shell: bash
