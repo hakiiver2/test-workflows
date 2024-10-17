@@ -20,7 +20,7 @@ on:
         required: true
 
 env:
-  VAL: ${{ input.VAL }}
+  VAL: ${{ inputs.VAL }}
 
 runs:
   using: "composite"
