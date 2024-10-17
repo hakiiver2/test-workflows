@@ -19,11 +19,10 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    steps:
-      - uses: ./.github/workflows/action.yml
-        with:
-          env: ${{ github.event.inputs.env }}
-          auto: ${{ github.event.inputs.auto }}
-          pod: ${{ github.event.inputs.pod }}
-        secrets:
-          TOKEN: ${{ secrets.TOKEN }}
+    uses: ./.github/workflows/action.yml
+    with:
+      env: ${{ github.event.inputs.env }}
+      auto: ${{ github.event.inputs.auto }}
+      pod: ${{ github.event.inputs.pod }}
+    secrets:
+      TOKEN: ${{ secrets.TOKEN }}
