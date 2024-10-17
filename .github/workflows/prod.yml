@@ -1,4 +1,4 @@
-name: PROD
+name: PROD 共通化呼び出し元でJOBSを使用した場合
 
 on:
   workflow_dispatch:

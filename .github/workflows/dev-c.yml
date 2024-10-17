@@ -1,4 +1,4 @@
-name: 共通化呼び出し元でRUNSを使用した場合
+name: DEV C
 
 on:
   workflow_dispatch:
@@ -37,4 +37,6 @@ jobs:
           pod: ${{ github.event.inputs.pod }}
           TOKEN: ${{ secrets.TOKEN }}
           VAL: ${{ vars.VAL }}
+
+
 
