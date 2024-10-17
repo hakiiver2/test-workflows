@@ -16,17 +16,12 @@ on:
         type: boolean
         required: false
 
-env:
-  ENV: ${{ inputs.env }}
-  AUTO: ${{ inputs.auto }}
-  POD: ${{ inputs.pod }}
-
 runs:
   using: "composite"
   steps:
     - name: Checkout
       uses: actions/checkout@v4
     - run: |
-      echo "ENV: $ENV"
-      echo "AUTO: $AUTO"
-      echo "POD: $POD"
+      echo "ENV: $env.env"
+      echo "AUTO: $env.auto"
+      echo "POD: $env.pod"
