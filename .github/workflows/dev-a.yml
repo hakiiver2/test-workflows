@@ -1,0 +1,29 @@
+name: DEV A
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        required: true
+        options:
+          - dev
+          - stable
+      auto:
+        type: boolean
+        required: true
+      pod:
+        type: boolean
+        required: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      uses: ./.github/workflows/deploy
+      with:
+        env: ${{ github.event.inputs.env }}
+        auto: ${{ github.event.inputs.auto }}
+        pod: ${{ github.event.inputs.pod }}
+        TOKEN: ${{ secrets.TOKEN }}
+

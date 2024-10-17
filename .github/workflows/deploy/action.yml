@@ -12,9 +12,6 @@ on:
       pod:
         type: boolean
         required: false
-    secrets:
-      TOKEN:
-        required: true
 
 
 runs:
@@ -27,6 +24,6 @@ runs:
         echo "AUTO: ${{ inputs.auto }}"
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
-        echo "TOKEN: ${{ secrets.TOKEN }}"
-        echo "VAL: ${{vars.VAL}}"
+        echo "TOKEN: ${{ inputs.TOKEN }}"
+        echo "VAL: ${{inputs.VAL}}"
       shell: bash
