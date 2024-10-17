@@ -20,6 +20,8 @@ on:
 runs:
   using: "composite"
   steps:
+    - name: Checkout
+      uses: actions/checkout@v4
     - name: echo
       run: |
         echo "AUTO: ${{ inputs.auto }}"

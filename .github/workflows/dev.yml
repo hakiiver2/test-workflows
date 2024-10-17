@@ -18,7 +18,9 @@ on:
 
 jobs:
   build:
-    uses: ./.github/workflows/deploy/action.yml
+    name: Build
+    runs-on: ubuntu-latest
+    uses: ./.github/workflows/deploy
     with:
       env: ${{ github.event.inputs.env }}
       auto: ${{ github.event.inputs.auto }}
