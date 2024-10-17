@@ -20,7 +20,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     uses: ./.github/workflows/action.yml
-    with:
+    inputs:
       env: ${{ github.event.inputs.env }}
       auto: ${{ github.event.inputs.auto }}
       pod: ${{ github.event.inputs.pod }}
