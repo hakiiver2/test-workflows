@@ -18,12 +18,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    secrets: inherit
     steps:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Build
         uses: ./.github/workflows/deploy
-        secrets: inherit
         with:
           env: ${{ github.event.inputs.env }}
           auto: ${{ github.event.inputs.auto }}
