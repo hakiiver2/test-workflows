@@ -14,8 +14,9 @@ on:
         type: string
         required: false
         default: 'false'
-env:
-  TOKEN: ${{ secrets.TOKEN }}
+    secrets:
+      TOKEN:
+        required: true
 
 jobs:
   build:
@@ -29,5 +30,5 @@ jobs:
           echo "AUTO: ${{ inputs.auto }}"
           echo "POD: ${{ inputs.pod }}"
           echo "ENV: ${{ inputs.env }}"
-          echo "TOKEN: ${TOKEN}"
+          echo "TOKEN: ${{ secrets.TOKEN }}"
           echo "VAL: ${{vars.VAL}}"

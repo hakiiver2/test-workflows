@@ -12,18 +12,18 @@ on:
       auto:
         type: boolean
         required: true
-        default: false
       pod:
         type: boolean
         required: false
-        default: false
 
 jobs:
   build:
-    uses: ./.github/workflows/action.yml
-    with:
-      env: ${{ github.event.inputs.env }}
-      auto: ${{ github.event.inputs.auto }}
-      pod: ${{ github.event.inputs.pod }}
-    secrets:
-      TOKEN: ${{ secrets.TOKEN }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: ./.github/workflows/action.yml
+        with:
+          env: ${{ github.event.inputs.env }}
+          auto: ${{ github.event.inputs.auto }}
+          pod: ${{ github.event.inputs.pod }}
+        secrets:
+          TOKEN: ${{ secrets.TOKEN }}
