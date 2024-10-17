@@ -1,21 +1,5 @@
 name: base
 
-on:
-  workflow_call:
-    inputs:
-      env:
-        type: string
-        required: true
-      auto:
-        type: boolean
-        required: true
-      pod:
-        type: boolean
-        required: false
-      TOKEN:
-        type: string
-        required: true
-
 
 runs:
   using: "composite"
