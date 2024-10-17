@@ -18,6 +18,7 @@ on:
 
 jobs:
   integration:
+    name: BUILD
     runs-on: ubuntu-latest
     outputs:
       env: ${{ github.event.inputs.env }}
