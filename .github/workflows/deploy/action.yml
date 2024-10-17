@@ -28,5 +28,6 @@ runs:
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
         echo "TOKEN: ${{ inputs.TOKEN }}"
+        echo "TOKEN BOOL: ${{ inputs.TOKEN }} == 'TOKENTOKEN'"
         echo "VAL: ${{inputs.VAL}}"
       shell: bash
