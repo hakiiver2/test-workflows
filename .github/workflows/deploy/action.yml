@@ -21,13 +21,12 @@ env:
   AUTO: ${{ inputs.auto }}
   POD: ${{ inputs.pod }}
 
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - run: |
-        echo "ENV: $ENV"
-        echo "AUTO: $AUTO"
-        echo "POD: $POD"
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - run: |
+      echo "ENV: $ENV"
+      echo "AUTO: $AUTO"
+      echo "POD: $POD"
