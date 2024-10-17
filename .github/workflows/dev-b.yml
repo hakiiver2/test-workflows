@@ -1,0 +1,41 @@
+name: DEV B
+
+on:
+  workflow_dispatch:
+    inputs:
+      env:
+        type: choice
+        required: true
+        options:
+          - dev
+          - stable
+      auto:
+        type: boolean
+        required: true
+      pod:
+        type: boolean
+        required: false
+
+jobs:
+  approval:
+    runs-on: ubuntu-latest
+    name: awaiting approval
+    environment: prod
+    steps:
+      - name: deploy
+        run: echo 'deploy...'
+  build:
+    needs: approval
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - uses: ./.github/workflows/deploy
+        with:
+          env: ${{ github.event.inputs.env }}
+          auto: ${{ github.event.inputs.auto }}
+          pod: ${{ github.event.inputs.pod }}
+          TOKEN: ${{ secrets.TOKEN }}
+          VAL: ${{ vars.VAL }}
+
+
