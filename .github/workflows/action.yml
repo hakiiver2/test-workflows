@@ -7,11 +7,13 @@ on:
         type: string
         required: true
       auto:
-        type: boolean
+        type: string
         required: true
+        default: 'false'
       pod:
-        type: boolean
+        type: string
         required: false
+        default: 'false'
     secrets:
       TOKEN:
         required: true
