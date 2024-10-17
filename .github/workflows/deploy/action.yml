@@ -13,6 +13,9 @@ on:
         type: boolean
         required: false
 
+env:
+  TOKEN: ${{ secrets.TOKEN }}
+
 runs:
   using: "composite"
   steps:
@@ -21,4 +24,5 @@ runs:
         echo "AUTO: ${{ inputs.auto }}"
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
+        echo "TOKEN: ${{ TOKEN }}"
       shell: bash
