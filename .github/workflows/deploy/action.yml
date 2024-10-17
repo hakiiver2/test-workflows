@@ -26,6 +26,6 @@ runs:
         echo "AUTO: ${{ inputs.auto }}"
         echo "POD: ${{ inputs.pod }}"
         echo "ENV: ${{ inputs.env }}"
-        echo "TOKEN: ${{secrets.TOKEN}}"
+        echo "TOKEN: ${{ secrets.TOKEN }}"
         echo "VAL: ${{vars.VAL}}"
       shell: bash
