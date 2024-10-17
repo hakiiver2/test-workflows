@@ -26,5 +26,5 @@ jobs:
           auto: ${{ github.event.inputs.auto }}
           pod: ${{ github.event.inputs.pod }}
           TOKEN: ${{ secrets.TOKEN }}
-          VAL: ${{ val.VAL }}
+          VAL: ${{ vars.VAL }}
 
