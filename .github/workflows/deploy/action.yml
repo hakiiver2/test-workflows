@@ -22,4 +22,3 @@ runs:
       echo "ENV: {{$inputs.env}}"
       echo "AUTO: {{$inputs.auto}}"
       echo "POD: {{$inputs.pod}}"
-      shell: bash 
