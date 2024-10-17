@@ -29,5 +29,5 @@ jobs:
           echo "AUTO: ${{ inputs.auto }}"
           echo "POD: ${{ inputs.pod }}"
           echo "ENV: ${{ inputs.env }}"
-          echo "TOKEN: ${{ TOKEN }}"
+          echo "TOKEN: ${TOKEN}"
           echo "VAL: ${{vars.VAL}}"
